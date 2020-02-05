@@ -1,4 +1,0 @@
-Versatile ocean simulation VEROS
-
-
-The purpose of this project is to save a known state of a long running process, so that in case of an error, the long running process can be reloaded at an earlier state instead of having to start from the beginning. The goal is to create and implement a checkpointing program or function in Python, which requires as few limitations, of the long running process to be checkpointed, as possible. Furthermore, the program should be able to create a complete checkpoint of the program within a reasonable time frame and without requiring unreasonable amounts of additional space.
