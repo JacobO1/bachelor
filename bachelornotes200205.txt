@@ -1,0 +1,24 @@
+Bachelor notes:
+Motivation: Mere detaljeret beskrivelse af problemet samt hvad kan det bruges til?
+	also: Related work.
+
+	Mere motivation:
+	- molecular dynamics - kig på simulationen (wiki)
+	- klime simulering
+	- james på nbi
+
+Lav en arbejdsplan:  ofte går de sidste 4 uger med at skrive, så vi skal have noget der virker før det 
+
+Rapporten giver et udgangspunkt for en karakter!
+
+Læsemateriale / baggrund
+	python globals()
+	iterate through variable in memory (kenneth har sendt mail)
+	serialisering / de-serialisering - tid: hvor lang tid tager det?
+	kenneth har sendt et program som vi kan køre på
+
+Igen, husk at skrive alt ned. Også det svære og det dumme, så det ikke kommer til at ligne vi ikke har lavet noget arbejde.
+
+tommelfingerregel: Ca. 15 sider pr studerende
+
+
