@@ -33,8 +33,8 @@ def jacobi(grid, epsilon=0.005, max_iterations=None):
 
 def main():
     H = bench.args.size[0]
-    W = bench.args.size[1]
-    I = bench.args.size[2]
+    W = bench.args.size[0]
+    I = 1000
 
     grid = bench.load_data()
     if grid is not None:
