@@ -38,15 +38,14 @@ def jacobi(grid, epsilon=0.005, max_iterations=None):
 
 #PRINT ALL GLOBALS
         for name, value in globals().items():
-            print(name, "-->", value)
-            try:
-                print(json.dumps(name, value))
-                print('\n\n\n\n\n')
-            except:
-                pass
+        	print('\n\n\n\n\n')
+        	print(name, "-->", value)
+        	try:
+        	    print(json.dumps(name, value))
+        	except:
+        	    pass
 
 #DUMP
-
         return delta > epsilon
 
     bench.do_while(loop_body, max_iterations, grid)
