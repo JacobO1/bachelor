@@ -1,6 +1,7 @@
 from __future__ import print_function
 import numpy as np
 from benchpress.benchmarks import util
+import json
 
 bench = util.Benchmark("Solving the heat equation using the jacobi method", "height*width*iterations")
 
@@ -25,6 +26,27 @@ def jacobi(grid, epsilon=0.005, max_iterations=None):
         delta = np.sum(np.absolute(work - center))
         center[:] = work
         bench.plot_surface(grid, "2d", 0, 200, -200)
+
+#DEBUG PRINTS
+#        print('grid:\n {}'.format(grid))
+#        print('center:\n {}'.format(center))
+#        print('north:\n {}'.format(north))
+#        print('east:\n {}'.format(east))
+#        print('west:\n {}'.format(west))
+#        print('south: \n {}'.format(south))
+
+
+#PRINT ALL GLOBALS
+        for name, value in globals().items():
+            print(name, "-->", value)
+            try:
+                print(json.dumps(name, value))
+                print('\n\n\n\n\n')
+            except:
+                pass
+
+#DUMP
+
         return delta > epsilon
 
     bench.do_while(loop_body, max_iterations, grid)
@@ -34,7 +56,7 @@ def jacobi(grid, epsilon=0.005, max_iterations=None):
 def main():
     H = bench.args.size[0]
     W = bench.args.size[0]
-    I = 1000
+    I = 10
 
     grid = bench.load_data()
     if grid is not None:
