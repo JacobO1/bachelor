@@ -4,7 +4,7 @@ Motivation: Mere detaljeret beskrivelse af problemet samt hvad kan det bruges ti
 
 	Mere motivation:
 	- molecular dynamics - kig på simulationen (wiki)
-	- klime simulering
+	- klima simulering
 	- james på nbi
 
 Lav en arbejdsplan:  ofte går de sidste 4 uger med at skrive, så vi skal have noget der virker før det 
