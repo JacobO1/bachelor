@@ -2,9 +2,11 @@ from __future__ import print_function
 import numpy as np
 from benchpress.benchmarks import util
 import json
+import dill
+import sys
 
 bench = util.Benchmark("Solving the heat equation using the jacobi method", "height*width*iterations")
-
+counter = 0
 
 def init_grid(height, width, dtype=np.float32):
     grid = np.zeros((height + 2, width + 2), dtype=dtype)
@@ -17,6 +19,7 @@ def init_grid(height, width, dtype=np.float32):
 
 def jacobi(grid, epsilon=0.005, max_iterations=None):
     def loop_body(grid):
+        global counter
         center = grid[1:-1, 1:-1]
         north = grid[0:-2, 1:-1]
         east = grid[1:-1, 2:]
@@ -26,7 +29,11 @@ def jacobi(grid, epsilon=0.005, max_iterations=None):
         delta = np.sum(np.absolute(work - center))
         center[:] = work
         bench.plot_surface(grid, "2d", 0, 200, -200)
-
+        counter += 1
+        print(counter)
+        if (counter == 22):
+            dill.dump_session('bch.pkl')
+            sys.exit()
 #DEBUG PRINTS
 #        print('grid:\n {}'.format(grid))
 #        print('center:\n {}'.format(center))
@@ -37,17 +44,16 @@ def jacobi(grid, epsilon=0.005, max_iterations=None):
 
 
 #PRINT ALL GLOBALS
-        for name, value in globals().items():
-        	print('\n\n\n\n\n')
-        	print(name, "-->", value)
-        	try:
-        	    print(json.dumps(name, value))
-        	except:
-        	    pass
+#        for name, value in globals().items():
+#        	print('\n\n\n\n\n')
+#        	print(name, "-->", value)
+#        	try:
+#        	    print(json.dumps(name, value))
+#        	except:
+#        	    pass
 
 #DUMP
         return delta > epsilon
-
     bench.do_while(loop_body, max_iterations, grid)
     return grid
 
@@ -55,7 +61,7 @@ def jacobi(grid, epsilon=0.005, max_iterations=None):
 def main():
     H = bench.args.size[0]
     W = bench.args.size[0]
-    I = 10
+    I = 10000
 
     grid = bench.load_data()
     if grid is not None:
