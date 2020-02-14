@@ -33,7 +33,7 @@ def jacobi(grid, epsilon=0.005, max_iterations=None):
         print(counter)
         if (counter == 22):
             dill.dump_session('bch.pkl')
-            sys.exit()
+
 #DEBUG PRINTS
 #        print('grid:\n {}'.format(grid))
 #        print('center:\n {}'.format(center))
