@@ -1,0 +1,60 @@
+Kenneth: Det er okay at det ikke er os der har skrevet dill-modulet, så længe man har noget der virker.
+
+For at få en program counter:
+a()
+...
+await b()
+...
+await 
+
+await skal så: switch(state)
+
+python.async.await()
+
+Kenneth synes vi skal gå efter performance delen - altså lave vores eget modul og køre det op imod dill. Dog kan det bliver svært når man har åbne sockets, for der har vi ikke tilstanden.
+
+Prøv at køre benchmark igen hvor vi har checkpoints i filen og derefter uden, og se hvor meget tid det koster at chekcpointe.
+
+Vi vælger selv om vi vil kigge på performance eller await. 
+
+Kenneth vil kigge efter eksempler med noget objekt orienteret, på den måde gør det checkpointing mere spændende. 
+
+Eks: vi bruger som udgangspunkt dill, men når vi når nogle dill-limitations, så skifter vi over til vores eget modul. 
+
+Tjek lige om dill og pickle er skrevet i python eller C. Umiddelbart kan man få det til at performe ret godt hvis vi skriver i C??
+
+HUSK: tænk over hvor meget man skal lave om i sin kode for at kunne få checkpointet sit program. Det er godt at kunne give et mål for hvor meget der skal ændres.  
+
+----------------------------------
+
+Hvis vi gerne vil arbejde hen mod et større projekt:
+grafener er bygget op at femkanter og sekskanter - lidt mere matematisk.
+vira er pakket in i kapsider(?) som har samme form som grafener.
+mål: hvilken struktur har de? hvad??
+det er et program som skal køre virkelig længe. kan vi måske checkpointe på det?
+Så skal vi kunne loade et C-program.
+
+vi skal finde på et trick så vi kan køre et python-checkpointingprogram til at kunne køre på C-kode
+
+-----------------------------------
+
+Så længe vi forstår hvordan dill virker er det fint nok. Det er en god basis.
+
+Kenneths foreslag: Fokuser på performance.
+
+Tjek performance loss på checkpoints ved at lave checkpoints hver x'ne gennemgang af programmet og hvor man bare kører programmet uden checkpoints.
+
+Tjek ting som måske ikke er understøttede.
+	-Tjek i forhold til objektorienteret python og objekter i stedet for vektoroperationer.
+
+Arguement for at lave vores egen eller udvidde dill til at understøtte andre typer.
+
+Checkpointing er super oplagt til forskning og simulation da det ofte er simulationsbaseret.
+
+Hvor meget ville det kræve for at et program kan omskrives til at understøtte vores checkpointing?
+
+Tjek om pickle og dill er lavet i c eller python.
+	-Undersøg hvordan python typer er implementeret i c måske?
+
+Genoptag programmet på samme instruktion som checkpointet er lavet.
+Python async kan bruges til at hoppe rundt til forskellige fragmenter af et program vha. states og await() statements. Kræver await statements, men ville muligvis virke. Kræver at vi kan tilgå 'state' som definerer hvilket fragment vi skal tilgå.
