@@ -1,0 +1,9 @@
+Vi foreslår at ændre på projektbeskrivelsen: i stedet for at create et nyt library, vil vi i stedet extend. 
+
+The purpose of this project is to extend a support library that can save the state of a long running process, so that in case of an error, the long running process can be reloaded at an earlier state instead of having to start from the beginning. The goal is to create and implement an optimization to an existing checkpointing solution, that makes it possible to extend existing programs with checkpointing, without manually keeping track of the entire program state +=and analyze the result.
+
+Furthermore, we have the following learning objectives:
+- Describe and evaluate the options for automatic serialization and de-serializationof objects in Python.
+- Evaluate and account for the overhead required to create a checkpoint.
+- Evaluate and account for the frequency of checkpoints and which parameterscan be used to determine when to checkpoint.
+- Evaluate the feasibility of checkpointing programs written independently of oursupport library.
