@@ -1,13 +1,12 @@
 from __future__ import print_function
 import numpy as np
 from benchpress.benchmarks import util
-import json
 import dill
-import sys
+import timeit
 
 bench = util.Benchmark("Solving the heat equation using the jacobi method", "height*width*iterations")
 
-#Global variables needed to save and resume program
+# Global variables needed to save and resume program
 counter = 0
 H = bench.args.size[0]
 W = bench.args.size[0]
@@ -39,8 +38,10 @@ def jacobi(grid, max_iterations, epsilon=0.005):
         bench.plot_surface(grid, "2d", 0, 200, -200)
         counter += 1
         print(counter)
+        if counter % 100 == 0:
+            dill.dump_session('bch.pkl')
 
-#DEBUG PRINTS
+# DEBUG PRINTS
 #        print('grid:\n {}'.format(grid))
 #        print('center:\n {}'.format(center))
 #        print('north:\n {}'.format(north))
@@ -49,7 +50,7 @@ def jacobi(grid, max_iterations, epsilon=0.005):
 #        print('south: \n {}'.format(south))
 
 
-#PRINT ALL GLOBALS
+# PRINT ALL GLOBALS
 #        for name, value in globals().items():
 #        	print('\n\n\n\n\n')
 #        	print(name, "-->", value)
@@ -58,25 +59,35 @@ def jacobi(grid, max_iterations, epsilon=0.005):
 #        	except:
 #        	    pass
 
-#DUMP
+# DUMP
         return delta > epsilon
-    bench.do_while(loop_body, max_iterations, grid)
+# BENCH.DO_WHILE CHANGED TO WHILE TRUE AND IF STATEMENT TO ACCURATELY EXTRACT
+# TIME PER ITERATION OF LOOP_BODY.
+    while True:
+        if counter <= max_iterations:
+            start_time = timeit.default_timer()
+            loop_body(grid)
+            stop_time = timeit.default_timer()
+            with open('mod100_timeit.txt', 'a') as f:
+                f.write(str(stop_time - start_time) + '\n')
+        else:
+            break
+    # bench.do_while(loop_body, max_iterations, grid)
     return grid
 
 
 def main():
     global H, W, I, grid
-    
+
     if grid is None:
-    	grid = init_grid(H, W, dtype=bench.dtype)
-    
+        grid = init_grid(H, W, dtype=bench.dtype)
+
     bench.start()
     grid = jacobi(grid, max_iterations=I)
     bench.stop()
     bench.save_data({'grid': grid})
     bench.pprint()
-    dill.dump_session('bch.pkl')
-    np.savetxt('yesCheck', grid)
+
 
 if __name__ == "__main__":
     main()
