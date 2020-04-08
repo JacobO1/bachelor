@@ -7,3 +7,28 @@ Furthermore, we have the following learning objectives:
 - Evaluate and account for the overhead required to create a checkpoint.
 - Evaluate and account for the frequency of checkpoints and which parameterscan be used to determine when to checkpoint.
 - Evaluate the feasibility of checkpointing programs written independently of oursupport library.
+
+---------------------------------------------------
+Faktiske noter:
+
+Ender vi så ud i bare at skulle skifte pickle ud med dill??
+
+kig derudover på json, og sammenlign performance mellem dill, pickle og json?
+
+Vi skal kunne reflektere og argumentere for alt hvad vi gør.
+
+
+
+Future work: Man kunne optimere dill ved at skrive det i C. 
+Det er vigtigt at nævne at vi har tænkt over at gøre det.
+
+Vi kan lave noget der hedder "profile", for at se hvilke kald der findes nu, som er tunge, og for at se hvor meget overhead der findes.
+
+"I de her programmer tilføjer checkpointing så og så meget overhead.."
+
+Next step: Få flere benchmark programmer op og køre (kenneth vil gerne se checkpointing i Veros). Han ved ikke om det er svært at indføre checkpointing i Veros.
+Derefter er next step: hvor lidt kræver det prgramørren at tilføje checkpoints.
+
+Dårlige resultater er okay.
+
+Hvis vi går denne vej, virker det til at vi ikke laver noget programmering, men kun sådan analyse arbejde. Kenneth tror ikke vi ender med ikke at have programmeret. Han tror at vi ender med at se der er nogle krav som skal understøttes, eller ting som kan gøres på andre måder.
