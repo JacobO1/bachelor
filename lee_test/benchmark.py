@@ -10,7 +10,7 @@ bench = util.Benchmark("Solving the heat equation using the jacobi method", "hei
 counter = 0
 H = 100
 W = 100
-I = 1500
+I = 50000
 
 grid = bench.load_data()
 
@@ -65,11 +65,11 @@ def jacobi(grid, max_iterations, epsilon=0.005):
 # TIME PER ITERATION OF LOOP_BODY.
     while True:
         if counter < max_iterations:
-            # start_time = timeit.default_timer()
+            start_time = timeit.default_timer()
             loop_body(grid)
-            # stop_time = timeit.default_timer()
-            # with open('mod100_timesssss.txt', 'a') as f:
-                # f.write(str(stop_time - start_time) + '\n')
+            stop_time = timeit.default_timer()
+            with open('50kExtract.txt', 'a') as f:
+                f.write(str(stop_time - start_time) + '\n')
         else:
             break
     # bench.do_while(loop_body, max_iterations, grid)
