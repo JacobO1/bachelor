@@ -1,0 +1,5 @@
+kør lee_test/benchmark.py for graph
+
+profile med 1500 iterationer
+
+python -m cProfile -s cumtime benchmark.py 1 > output.txt

@@ -8,8 +8,8 @@ bench = util.Benchmark("Solving the heat equation using the jacobi method", "hei
 
 # Global variables needed to save and resume program
 counter = 0
-H = bench.args.size[0]
-W = bench.args.size[0]
+H = 100
+W = 100
 I = 1500
 
 grid = bench.load_data()
@@ -37,7 +37,7 @@ def jacobi(grid, max_iterations, epsilon=0.005):
         center[:] = work
         bench.plot_surface(grid, "2d", 0, 200, -200)
         counter += 1
-        print(counter)
+        # print(counter)
         if counter % 100 == 0:
             dill.dump_session('bch.pkl')
 
@@ -64,12 +64,12 @@ def jacobi(grid, max_iterations, epsilon=0.005):
 # BENCH.DO_WHILE CHANGED TO WHILE TRUE AND IF STATEMENT TO ACCURATELY EXTRACT
 # TIME PER ITERATION OF LOOP_BODY.
     while True:
-        if counter <= max_iterations:
-            start_time = timeit.default_timer()
+        if counter < max_iterations:
+            # start_time = timeit.default_timer()
             loop_body(grid)
-            stop_time = timeit.default_timer()
-            with open('mod100_timeit.txt', 'a') as f:
-                f.write(str(stop_time - start_time) + '\n')
+            # stop_time = timeit.default_timer()
+            # with open('mod100_timesssss.txt', 'a') as f:
+                # f.write(str(stop_time - start_time) + '\n')
         else:
             break
     # bench.do_while(loop_body, max_iterations, grid)
