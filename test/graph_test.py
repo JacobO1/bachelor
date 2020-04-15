@@ -3,14 +3,12 @@ import matplotlib.pyplot as plt
 
 y = np.loadtxt("test100mod.txt", delimiter="\n")
 x = np.linspace(0,len(y),len(y))
-y2 = np.loadtxt("1k/test8.txt", delimiter="\n")
-y3 = np.loadtxt("1k/test0.txt", delimiter="\n")
+y2 = np.loadtxt("1k/test0.txt", delimiter="\n")
+y3 = np.loadtxt("1k/test9.txt", delimiter="\n")
 
-plt.plot(x,y, '-', label="Time per iteration")
-plt.show()
-plt.plot(x,y2, '-', label="Boop1")
-plt.show()
-plt.plot(x,y3, '-', label="Boop2")
+plt.plot(x,y3, 'b-', label="Boop2")
+plt.plot(x,y2, 'g-', label="Boop1")
+plt.plot(x,y, 'r-', label="Time per iteration")
 
 plt.xlabel('Iterations')
 plt.ylabel('Time in seconds')
@@ -29,4 +27,4 @@ plt.legend(loc="upper right")
 
 # plt.savefig('3kgraph_avg.png', dpi=250)
 
-plt.show()
+plt.savefig('temp0.png', dpi=200)

@@ -26,6 +26,7 @@ def init_grid(height, width, dtype=np.float32):
 
 
 def jacobi(grid, max_iterations, epsilon=0.005):
+    save = '1k/test' + str(bench.args.size[0]) + '.txt'
     def loop_body(grid):
         global counter
         center = grid[1:-1, 1:-1]
@@ -51,7 +52,7 @@ def jacobi(grid, max_iterations, epsilon=0.005):
             start_time = timeit.default_timer()
             loop_body(grid)
             stop_time = timeit.default_timer()
-            with open('1k/test' + str(bench.args.size[0]) + '.txt', 'a') as f:
+            with open(save, 'a') as f:
                 f.write(str(stop_time - start_time) + '\n')
         else:
             break
