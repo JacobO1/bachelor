@@ -1,0 +1,17 @@
+Noter fra møde:
+carl vil have vi skal kigge på noget warmup (kør den et par gange inden)??
+Kør længere og længere tid mellem checkpoints (det giver bedre og bedre køretid, da checkpointing er det tunge)
+Han vil også gerne se noget ram og noget disk.
+
+Evt lav incremental checkpoints? Så man kun checkpointer det som er ændret siden sidste checkpoint.
+
+Siden lige dette program er ret lille med "få" mængder data, vil checkpointing fylde meget i forhold til programmet.
+
+Error bar og candlesticks??
+
+Carl vil også gerne se en gennemsnitsbar for den graf vi har indtil videre. Den skulle gerne være længere nede mod bunden jo færre gange vi chekcpointer
+
+Mht. motivation: forklar hvorfor det giver mening at lave dette arbejde. (kenneth synes lige nu at den er lidt for kort)
+
+Fra nu af holder vi møder om fredagen kl 10 som udgangspunkt
+---------------------------------------------------------------
