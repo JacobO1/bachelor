@@ -3,6 +3,7 @@ import numpy as np
 from benchpress.benchmarks import util
 import dill
 import timeit
+import psutil
 
 bench = util.Benchmark("Solving the heat equation using the jacobi method", "height*width*iterations")
 
@@ -10,7 +11,7 @@ bench = util.Benchmark("Solving the heat equation using the jacobi method", "hei
 counter = 0
 H = 100
 W = 100
-I = 50000
+I = 3000
 
 grid = bench.load_data()
 
@@ -39,25 +40,7 @@ def jacobi(grid, max_iterations, epsilon=0.005):
         counter += 1
         # print(counter)
         if counter % 100 == 0:
-            dill.dump_session('bch.pkl')
-
-# DEBUG PRINTS
-#        print('grid:\n {}'.format(grid))
-#        print('center:\n {}'.format(center))
-#        print('north:\n {}'.format(north))
-#        print('east:\n {}'.format(east))
-#        print('west:\n {}'.format(west))
-#        print('south: \n {}'.format(south))
-
-
-# PRINT ALL GLOBALS
-#        for name, value in globals().items():
-#        	print('\n\n\n\n\n')
-#        	print(name, "-->", value)
-#        	try:
-#        	    print(json.dumps(name, value))
-#        	except:
-#        	    pass
+            dill.dump_session('dump_file.pkl')
 
 # DUMP
         return delta > epsilon
@@ -68,7 +51,7 @@ def jacobi(grid, max_iterations, epsilon=0.005):
             start_time = timeit.default_timer()
             loop_body(grid)
             stop_time = timeit.default_timer()
-            with open('50kExtract.txt', 'a') as f:
+            with open('1k/test' + str(bench.args.size[0]) + '.txt', 'a') as f:
                 f.write(str(stop_time - start_time) + '\n')
         else:
             break
@@ -84,6 +67,9 @@ def main():
 
     bench.start()
     grid = jacobi(grid, max_iterations=I)
+    # print("\n\nTotal context switches during execution = {}".format(psutil.Process().num_ctx_switches()))
+    # print("\nTotal time waiting for blocking I/O to complete = {} seconds".format(psutil.Process().cpu_times()[4]))
+    # print("\nDisk info = {}\n\n".format(psutil.Process().io_counters()))
     bench.stop()
     bench.save_data({'grid': grid})
     bench.pprint()
