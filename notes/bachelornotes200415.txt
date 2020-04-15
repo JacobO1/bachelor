@@ -15,3 +15,19 @@ Mht. motivation: forklar hvorfor det giver mening at lave dette arbejde. (kennet
 
 Fra nu af holder vi møder om fredagen kl 10 som udgangspunkt
 ---------------------------------------------------------------
+
+Vi kigger kun på iterationskøretid.
+
+Lav en warm-up måling hvor vi kører x iterationer før vi begynder at måle køretid. Dette giver mening fordi man er ret ligeglad med start-up tiden på et program som kører i en måned.
+
+RAM og DISK data.
+
+Errorbars/candlesticks på vores plot til at vise afvigelser mellem de forskellige iterationer. Vi kører det 1000 gange og laver errorbars for at vise at det er konsistent.
+
+Checkpoint mindre og mindre ofte, så fx 10, 20, 40, 80, 160, 320.
+
+Implementation > Setup+Analyse > Optimization.
+
+Motivationen er noget af det aller vigtigste ved vores opgave fordi den forklarer hvorfor det her overhovedet giver mening at lave!!!! Kenneth synes at den er ret kort. Kenneth vil skaffe noget evidens for langtidskørende programmer.
+
+Derefter: Veros
