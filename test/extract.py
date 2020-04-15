@@ -22,3 +22,9 @@ with open('50kExtract.txt', 'r') as f:
 
 print('\n\nAverage of dump iterations: \t {}'.format(dump_avg/dump_count))
 print('Average of regular iterations: \t {}\n\n'.format(reg_avg/reg_count))
+
+# gennemsnit i alt:
+
+avg = (reg_avg+dump_avg)/(reg_count+dump_count)
+
+print(avg)
