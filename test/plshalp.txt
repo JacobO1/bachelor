@@ -1,0 +1,492 @@
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=1, involuntary=288)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 29.4
+
+RAM info = pmem(rss=37191680, vms=400969728, shared=15167488, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2768896, read_chars=9504530, write_chars=2651098)
+
+bench_versions/bench2.py - bohrium: False, iteration: 1, elapsed-time: 0.413632
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=0, involuntary=109)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 28.7
+
+RAM info = pmem(rss=36753408, vms=400973824, shared=14737408, text=4096, lib=0, data=316583936, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2768896, read_chars=9504530, write_chars=2650803)
+
+bench_versions/bench2.py - bohrium: False, iteration: 2, elapsed-time: 0.389021
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=1, involuntary=124)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 27.4
+
+RAM info = pmem(rss=36970496, vms=400969728, shared=14962688, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2768896, read_chars=9504530, write_chars=2650854)
+
+bench_versions/bench2.py - bohrium: False, iteration: 3, elapsed-time: 0.385460
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=0, involuntary=323)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 28.4
+
+RAM info = pmem(rss=36712448, vms=400969728, shared=14700544, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2768896, read_chars=9504530, write_chars=2651119)
+
+bench_versions/bench2.py - bohrium: False, iteration: 4, elapsed-time: 0.413337
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=0, involuntary=46)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 29.5
+
+RAM info = pmem(rss=37179392, vms=400969728, shared=15167488, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504529, write_chars=2650805)
+
+bench_versions/bench2.py - bohrium: False, iteration: 5, elapsed-time: 0.390766
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=0, involuntary=139)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 26.6
+
+RAM info = pmem(rss=37003264, vms=400969728, shared=14995456, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504530, write_chars=2650769)
+
+bench_versions/bench2.py - bohrium: False, iteration: 6, elapsed-time: 0.383900
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=1, involuntary=79)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 28.0
+
+RAM info = pmem(rss=36945920, vms=400973824, shared=14934016, text=4096, lib=0, data=316583936, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504529, write_chars=2650978)
+
+bench_versions/bench2.py - bohrium: False, iteration: 7, elapsed-time: 0.395126
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=10, involuntary=155)
+
+I/O blocking = 0.76 seconds
+
+CPU% = 21.6
+
+RAM info = pmem(rss=36880384, vms=400969728, shared=14876672, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504537, write_chars=2651020)
+
+bench_versions/bench2.py - bohrium: False, iteration: 8, elapsed-time: 1.220968
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=1, involuntary=22)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 25.6
+
+RAM info = pmem(rss=37175296, vms=400969728, shared=15167488, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504531, write_chars=2650596)
+
+bench_versions/bench2.py - bohrium: False, iteration: 9, elapsed-time: 0.364102
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=2, involuntary=36)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 27.2
+
+RAM info = pmem(rss=36966400, vms=400969728, shared=14958592, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504531, write_chars=2651154)
+
+bench_versions/bench2.py - bohrium: False, iteration: 10, elapsed-time: 0.413558
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=0, involuntary=46)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 28.0
+
+RAM info = pmem(rss=37003264, vms=400969728, shared=14999552, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504531, write_chars=2650894)
+
+bench_versions/bench2.py - bohrium: False, iteration: 11, elapsed-time: 0.388942
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=5, involuntary=320)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 25.9
+
+RAM info = pmem(rss=36941824, vms=400973824, shared=14934016, text=4096, lib=0, data=316583936, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504532, write_chars=2650799)
+
+bench_versions/bench2.py - bohrium: False, iteration: 12, elapsed-time: 0.389764
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=0, involuntary=180)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 26.5
+
+RAM info = pmem(rss=36810752, vms=400969728, shared=14798848, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504532, write_chars=2650874)
+
+bench_versions/bench2.py - bohrium: False, iteration: 13, elapsed-time: 0.394032
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=5, involuntary=40)
+
+I/O blocking = 0.04 seconds
+
+CPU% = 31.2
+
+RAM info = pmem(rss=36745216, vms=400969728, shared=14737408, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504531, write_chars=2650938)
+
+bench_versions/bench2.py - bohrium: False, iteration: 14, elapsed-time: 0.439980
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=4, involuntary=29)
+
+I/O blocking = 0.47 seconds
+
+CPU% = 25.5
+
+RAM info = pmem(rss=36872192, vms=400969728, shared=14860288, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504536, write_chars=2651045)
+
+bench_versions/bench2.py - bohrium: False, iteration: 15, elapsed-time: 0.881352
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=0, involuntary=30)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 26.0
+
+RAM info = pmem(rss=36970496, vms=400969728, shared=14962688, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504531, write_chars=2650793)
+
+bench_versions/bench2.py - bohrium: False, iteration: 16, elapsed-time: 0.387133
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=2, involuntary=107)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 26.4
+
+RAM info = pmem(rss=36806656, vms=400969728, shared=14798848, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504532, write_chars=2650779)
+
+bench_versions/bench2.py - bohrium: False, iteration: 17, elapsed-time: 0.388644
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=1, involuntary=119)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 25.7
+
+RAM info = pmem(rss=36749312, vms=400969728, shared=14737408, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504532, write_chars=2650849)
+
+bench_versions/bench2.py - bohrium: False, iteration: 18, elapsed-time: 0.382728
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=1, involuntary=25)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 27.6
+
+RAM info = pmem(rss=36835328, vms=400969728, shared=14823424, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504531, write_chars=2651269)
+
+bench_versions/bench2.py - bohrium: False, iteration: 19, elapsed-time: 0.408966
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=1, involuntary=32)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 27.7
+
+RAM info = pmem(rss=36892672, vms=400969728, shared=14884864, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504531, write_chars=2650782)
+
+bench_versions/bench2.py - bohrium: False, iteration: 20, elapsed-time: 0.387678
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=5, involuntary=31)
+
+I/O blocking = 0.11 seconds
+
+CPU% = 24.1
+
+RAM info = pmem(rss=36872192, vms=400969728, shared=14864384, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504536, write_chars=2650776)
+
+bench_versions/bench2.py - bohrium: False, iteration: 21, elapsed-time: 0.513713
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=3, involuntary=29)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 28.2
+
+RAM info = pmem(rss=36917248, vms=400969728, shared=14893056, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504537, write_chars=2651153)
+
+bench_versions/bench2.py - bohrium: False, iteration: 1, elapsed-time: 0.412391
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=1, involuntary=29)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 27.1
+
+RAM info = pmem(rss=36913152, vms=400969728, shared=14905344, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504537, write_chars=2650896)
+
+bench_versions/bench2.py - bohrium: False, iteration: 2, elapsed-time: 0.386628
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=0, involuntary=40)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 27.3
+
+RAM info = pmem(rss=36782080, vms=400969728, shared=14770176, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504537, write_chars=2651123)
+
+bench_versions/bench2.py - bohrium: False, iteration: 3, elapsed-time: 0.402119
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=0, involuntary=76)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 28.0
+
+RAM info = pmem(rss=36876288, vms=400969728, shared=14864384, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504537, write_chars=2650892)
+
+bench_versions/bench2.py - bohrium: False, iteration: 4, elapsed-time: 0.396375
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=1, involuntary=58)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 27.9
+
+RAM info = pmem(rss=36859904, vms=400969728, shared=14852096, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504537, write_chars=2650919)
+
+bench_versions/bench2.py - bohrium: False, iteration: 5, elapsed-time: 0.395264
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=0, involuntary=48)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 28.0
+
+RAM info = pmem(rss=36777984, vms=400973824, shared=14770176, text=4096, lib=0, data=316583936, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504537, write_chars=2650869)
+
+bench_versions/bench2.py - bohrium: False, iteration: 6, elapsed-time: 0.389261
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=0, involuntary=35)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 27.7
+
+RAM info = pmem(rss=37187584, vms=400973824, shared=15171584, text=4096, lib=0, data=316583936, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504537, write_chars=2650807)
+
+bench_versions/bench2.py - bohrium: False, iteration: 7, elapsed-time: 0.394168
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=1, involuntary=35)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 28.1
+
+RAM info = pmem(rss=36868096, vms=400969728, shared=14860288, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504537, write_chars=2650851)
+
+bench_versions/bench2.py - bohrium: False, iteration: 8, elapsed-time: 0.389578
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=9, involuntary=22)
+
+I/O blocking = 0.87 seconds
+
+CPU% = 21.6
+
+RAM info = pmem(rss=36872192, vms=400969728, shared=14860288, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504542, write_chars=2650991)
+
+bench_versions/bench2.py - bohrium: False, iteration: 9, elapsed-time: 1.295936
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=2, involuntary=23)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 27.9
+
+RAM info = pmem(rss=36909056, vms=400969728, shared=14905344, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504537, write_chars=2650887)
+
+bench_versions/bench2.py - bohrium: False, iteration: 10, elapsed-time: 0.389385
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=1, involuntary=28)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 27.6
+
+RAM info = pmem(rss=36777984, vms=400969728, shared=14770176, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504537, write_chars=2650721)
+
+bench_versions/bench2.py - bohrium: False, iteration: 11, elapsed-time: 0.382708
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=1, involuntary=46)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 28.9
+
+RAM info = pmem(rss=36855808, vms=400969728, shared=14852096, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504537, write_chars=2650756)
+
+bench_versions/bench2.py - bohrium: False, iteration: 12, elapsed-time: 0.381662
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=0, involuntary=22)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 25.8
+
+RAM info = pmem(rss=36859904, vms=400969728, shared=14852096, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504537, write_chars=2650809)
+
+bench_versions/bench2.py - bohrium: False, iteration: 13, elapsed-time: 0.386640
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=0, involuntary=29)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 27.7
+
+RAM info = pmem(rss=36921344, vms=400969728, shared=14913536, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504537, write_chars=2650789)
+
+bench_versions/bench2.py - bohrium: False, iteration: 14, elapsed-time: 0.392277
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=9, involuntary=1488)
+
+I/O blocking = 0.32 seconds
+
+CPU% = 27.1
+
+RAM info = pmem(rss=36966400, vms=400969728, shared=14962688, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504544, write_chars=2650974)
+
+bench_versions/bench2.py - bohrium: False, iteration: 15, elapsed-time: 0.790743
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=1, involuntary=24)
+
+I/O blocking = 0.12 seconds
+
+CPU% = 33.6
+
+RAM info = pmem(rss=36786176, vms=400973824, shared=14770176, text=4096, lib=0, data=316583936, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504542, write_chars=2650760)
+
+bench_versions/bench2.py - bohrium: False, iteration: 16, elapsed-time: 0.561100
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=1, involuntary=21)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 26.6
+
+RAM info = pmem(rss=36999168, vms=400969728, shared=14991360, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504537, write_chars=2650753)
+
+bench_versions/bench2.py - bohrium: False, iteration: 17, elapsed-time: 0.381937
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=1, involuntary=71)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 27.5
+
+RAM info = pmem(rss=36999168, vms=400969728, shared=14991360, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504537, write_chars=2650797)
+
+bench_versions/bench2.py - bohrium: False, iteration: 18, elapsed-time: 0.384441
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=1, involuntary=82)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 27.4
+
+RAM info = pmem(rss=36782080, vms=400969728, shared=14770176, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504537, write_chars=2650825)
+
+bench_versions/bench2.py - bohrium: False, iteration: 19, elapsed-time: 0.389780
+--------------------------------------------------------------------------------
+Context switches = pctxsw(voluntary=0, involuntary=109)
+
+I/O blocking = 0.0 seconds
+
+CPU% = 26.6
+
+RAM info = pmem(rss=36876288, vms=400969728, shared=14864384, text=4096, lib=0, data=316579840, dirty=0)
+
+Disk info = pio(read_count=1143, write_count=3090, read_bytes=0, write_bytes=2772992, read_chars=9504538, write_chars=2650864)
+
+bench_versions/bench2.py - bohrium: False, iteration: 20, elapsed-time: 0.389601

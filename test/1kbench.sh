@@ -1,4 +1,4 @@
-for i in {0..10}
+for i in {1..2000}
 do
-   python3 benchmark.py $i
+	python3 bench_versions/bench2.py $i
 done

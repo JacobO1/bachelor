@@ -26,7 +26,8 @@ def init_grid(height, width, dtype=np.float32):
 
 
 def jacobi(grid, max_iterations, epsilon=0.005):
-    save = '1k/test' + str(bench.args.size[0]) + '.txt'
+    # save = '1k/test' + str(bench.args.size[0]) + '.txt'
+    save = '1k/ORIGINAL' + '.txt'
     def loop_body(grid):
         global counter
         center = grid[1:-1, 1:-1]
