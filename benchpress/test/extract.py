@@ -10,7 +10,7 @@ dump_avg = 0
 dump_count = 0
 
 
-with open('50kExtract.txt', 'r') as f:
+with open('bench_results/performance_difference.txt', 'r') as f:
 	for line in f:
 		counter += 1
 		if counter % 100 == 0:
