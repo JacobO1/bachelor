@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 y = np.loadtxt("../bench_results/spike.txt", delimiter="\n")
 x = np.linspace(0,len(y),len(y))
 
+
+plt.figure(figsize=(10,6))
 plt.plot(x,y, 'r-', label="Time per iteration")
 
 plt.xlabel('Iterations')
@@ -18,5 +20,4 @@ plt.xlabel('Iterations')
 plt.ylabel('Time in seconds')
 
 plt.legend(loc="upper right")
-
-plt.savefig('spike.png', dpi=200)
+plt.savefig('spike.png', dpi=150)
