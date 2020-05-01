@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 counter = 1
 
 #setup step:
-avg_arr = np.loadtxt('../bench_results/checkpoint_500/5test10.txt')
+avg_arr = np.loadtxt('../bench_results/loaded_modules/1test10.txt')
 min_max_arr = np.empty([2,3000])
-min_max_arr[0] = np.loadtxt('../bench_results/checkpoint_500/5test10.txt')
-min_max_arr[1] = np.loadtxt('../bench_results/checkpoint_500/5test10.txt')
+min_max_arr[0] = np.loadtxt('../bench_results/loaded_modules/1test10.txt')
+min_max_arr[1] = np.loadtxt('../bench_results/loaded_modules/1test10.txt')
 
 # print(avg_arr.shape)
 # print(avg_arr)
@@ -19,7 +19,7 @@ min_max_arr[1] = np.loadtxt('../bench_results/checkpoint_500/5test10.txt')
 #Skipping 10 first executions for warmup purposes
 for i in range(11,2001):
 	counter += 1
-	curr_exec = np.loadtxt('../bench_results/checkpoint_500/5test' + str(i) + '.txt')
+	curr_exec = np.loadtxt('../bench_results/loaded_modules/1test' + str(i) + '.txt')
 	for j in range(len(curr_exec)):
 	
 	
@@ -39,6 +39,7 @@ actual_avg = sum(final_avg_arr)/len(final_avg_arr)
 
 x = np.linspace(0,len(final_avg_arr),len(final_avg_arr))
 
+print(min_max_arr[1][:50])
 
 plt.figure(figsize=(20,10))
 
@@ -66,5 +67,5 @@ plt.legend(loc="upper right")
 
 
 # plt.savefig('3kgraph_avg.png', dpi=250)
-plt.savefig('test.png', dpi=150)
+# plt.savefig('test.png', dpi=150)
 # plt.show()

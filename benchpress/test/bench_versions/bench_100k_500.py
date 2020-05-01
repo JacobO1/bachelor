@@ -9,8 +9,8 @@ bench = util.Benchmark("Solving the heat equation using the jacobi method", "hei
 
 # Global variables needed to save and resume program
 counter = 0
-H = 100
-W = 100
+H = 1000
+W = 1000
 I = 3000
 
 grid = bench.load_data()
@@ -26,7 +26,7 @@ def init_grid(height, width, dtype=np.float32):
 
 
 def jacobi(grid, max_iterations, epsilon=0.005):
-    save = 'bachelor/benchpress/test/bench_results/new_filename/test' + str(bench.args.size[0]) + '.txt'
+    save = 'bachelor/benchpress/test/bench_results/100k_500/test' + str(bench.args.size[0]) + '.txt'
     # save = '1k/ORIGINAL' + '.txt'
     def loop_body(grid):
         global counter
@@ -41,8 +41,8 @@ def jacobi(grid, max_iterations, epsilon=0.005):
         bench.plot_surface(grid, "2d", 0, 200, -200)
         counter += 1
         # print(counter)
-        if counter % 100 == 0:
-            dill.dump_session('tmp/actualtmp' + str(counter) + 'dump_file.pkl')
+        if counter % 500 == 0:
+            dill.dump_session('tmp/actualtmp/dump_file.pkl')
 
 # DUMP
         return delta > epsilon
