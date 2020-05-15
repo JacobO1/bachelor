@@ -26,8 +26,8 @@ def init_grid(height, width, dtype=np.float32):
 
 
 def jacobi(grid, max_iterations, epsilon=0.005):
-    save = 'bachelor/benchpress/test/bench_results/100k_500/test' + str(bench.args.size[0]) + '.txt'
-    # save = '1k/ORIGINAL' + '.txt'
+    # save = 'bachelor/benchpress/test/bench_results/100k_500/test' + str(bench.args.size[0]) + '.txt'
+    save = 'tmp/actualtmp/TIMING_TMP' + str(bench.args.size[0]) + '.txt'
     def loop_body(grid):
         global counter
         center = grid[1:-1, 1:-1]
@@ -42,7 +42,7 @@ def jacobi(grid, max_iterations, epsilon=0.005):
         counter += 1
         # print(counter)
         if counter % 500 == 0:
-            dill.dump_session('tmp/actualtmp/dump_file.pkl')
+            dill.dump_session('tmp/actualtmp/TEMP_PLSDELETE.pkl')
 
 # DUMP
         return delta > epsilon
@@ -70,7 +70,7 @@ def main():
     bench.start()
     grid = jacobi(grid, max_iterations=I)
     # print("\n\nTotal context switches during execution = {}".format(psutil.Process().num_ctx_switches()))
-    # print("\nTotal time waiting for blocking I/O to complete = {} seconds".format(psutil.Process().cpu_times()[4]))
+    print("\nTotal time waiting for blocking I/O to complete = {} seconds".format(psutil.Process().cpu_times()[4]))
     # print("\nDisk info = {}\n\n".format(psutil.Process().io_counters()))
     bench.stop()
     bench.save_data({'grid': grid})
