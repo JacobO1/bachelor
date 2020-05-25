@@ -25,7 +25,8 @@ class ACCSetup(VerosSetup):
         vs.nx, vs.ny, vs.nz = 30, 42, 15
         vs.dt_mom = 4800
         vs.dt_tracer = 86400 / 2.
-        vs.runlen = 86400 * 365
+        if (vs.runlen == 0.0):
+            vs.runlen = 86400 * 365
 
         vs.coord_degree = True
         vs.enable_cyclic_x = True
@@ -132,20 +133,20 @@ class ACCSetup(VerosSetup):
 
     @veros_method
     def set_diagnostics(self, vs):
-        # vs.diagnostics['snapshot'].output_frequency = 365 * 86400 #MODIFIED
-        # vs.diagnostics['averages'].output_variables = (
-        #     'salt', 'temp', 'u', 'v', 'w', 'psi', 'surface_taux', 'surface_tauy'
-        # )
-        # vs.diagnostics['averages'].output_frequency = 365 * 86400.
-        # vs.diagnostics['averages'].sampling_frequency = vs.dt_tracer * 10
-        # vs.diagnostics['overturning'].output_frequency = 365 * 86400. / 48.
-        # vs.diagnostics['overturning'].sampling_frequency = vs.dt_tracer * 10
-        # vs.diagnostics['tracer_monitor'].output_frequency = 365 * 86400. / 12.
-        # vs.diagnostics['energy'].output_frequency = 365 * 86400. / 48
-        # vs.diagnostics['energy'].sampling_frequency = vs.dt_tracer * 10
-        vs.restart_frequency = 500 #MODIFIED
-        vs.force_overwrite = True
-        vs.restart_output_filename = "nemt.restart.h5"
+        vs.diagnostics['snapshot'].output_frequency = 365 * 86400 #MODIFIED
+        vs.diagnostics['averages'].output_variables = (
+            'salt', 'temp', 'u', 'v', 'w', 'psi', 'surface_taux', 'surface_tauy'
+        )
+        vs.diagnostics['averages'].output_frequency = 365 * 86400.
+        vs.diagnostics['averages'].sampling_frequency = vs.dt_tracer * 10
+        vs.diagnostics['overturning'].output_frequency = 365 * 86400. / 48.
+        vs.diagnostics['overturning'].sampling_frequency = vs.dt_tracer * 10
+        vs.diagnostics['tracer_monitor'].output_frequency = 365 * 86400. / 12.
+        vs.diagnostics['energy'].output_frequency = 365 * 86400. / 48
+        vs.diagnostics['energy'].sampling_frequency = vs.dt_tracer * 10
+        vs.restart_frequency = 86400*100 #MODIFIED
+        # vs.force_overwrite = True
+        vs.restart_output_filename = "totally.restart.h5"
 
     def after_timestep(self, vs):
         pass

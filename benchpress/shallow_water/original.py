@@ -106,8 +106,8 @@ def simulate(state, timesteps):
 
 def main():
     H = bench.args.size[0]
-    W = bench.args.size[1]
-    I = bench.args.size[2]
+    W = bench.args.size[0]
+    I = 3000
 
     state = bench.load_data()
     if state is None:
