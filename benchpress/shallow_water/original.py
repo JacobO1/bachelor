@@ -10,9 +10,18 @@ Adapted from: http://people.sc.fsu.edu/~jburkardt/m_src/shallow_water_2d/
 """
 import numpy as np
 from benchpress.benchmarks import util
+import dill
 
 bench = util.Benchmark("Shallow Water", "height*width*iterations")
 g = 9.80665  # gravitational acceleration
+
+# Global variables needed to save and resume program
+counter = 0
+H = 100
+W = 100
+I = 3000
+
+state = bench.load_data()
 
 
 def droplet(height, width, data_type=np.float32):
@@ -43,6 +52,7 @@ def simulate(state, timesteps):
     # FLOP count: i*(12*s + 4*s**2 + 14*s**2 + 9*s**2 + 4*s**2 + 9*s**2 + 14*s**2 + 6*s**2 + 19*s**2 + 19*s**2)
     # where s is size and i is iterations
     def loop_body(H, U, V, dt=0.02, dx=1.0, dy=1.0):
+        global counter
         # Reflecting boundary conditions
         H[:, 0] = H[:, 1];
         U[:, 0] = U[:, 1];
@@ -100,16 +110,27 @@ def simulate(state, timesteps):
                          (dt / dy) * ((Vy[:, 1:] ** 2 / Hy[:, 1:] + g / 2 * Hy[:, 1:] ** 2) -
                                       (Vy[:, :-1] ** 2 / Hy[:, :-1] + g / 2 * Hy[:, :-1] ** 2))
         bench.plot_surface(H, "3d", 0, 0, 5.5)
+        counter += 1
+        if counter % 1000 == 0:
+            dill.dump_session('dump_file.pkl')
+            print(counter)
 
-    bench.do_while(loop_body, timesteps, state['H'], state['U'], state['V'])
+    while True:
+        if counter < timesteps:
+            # start_time = timeit.default_timer()
+            loop_body(state['H'], state['U'], state['V'])
+            # stop_time = timeit.default_timer()
+            # with open(save, 'a') as f:
+            #     f.write(str(stop_time - start_time) + '\n')
+        else:
+            break
+
+    # bench.do_while(loop_body, timesteps, state['H'], state['U'], state['V'])
 
 
 def main():
-    H = bench.args.size[0]
-    W = bench.args.size[0]
-    I = 3000
-
-    state = bench.load_data()
+    global H, W, I, state
+    
     if state is None:
         state = model(H, W, dtype=bench.dtype)
 
@@ -117,6 +138,8 @@ def main():
     simulate(state, I)
     bench.stop()
     bench.save_data(state)
+    with open('yes_check', 'wb') as f:
+        f.write(dill.dumps(state))
     bench.pprint()
 
 

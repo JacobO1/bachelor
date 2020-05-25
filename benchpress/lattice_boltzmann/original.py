@@ -11,8 +11,25 @@ E-mail: Jonas.Latt@cui.unige.ch
 """
 import numpy as np
 from benchpress.benchmarks import util
+import dill
 
 bench = util.Benchmark("The Lattice Boltzmann Methods D2Q9", "height*width*iterations")
+
+# Global variables needed to save and resume program
+counter = 0
+H = 200
+W = 200
+I = 1000
+ly = 0
+lx = 0
+col = 0
+cx_3d = 0
+cy_3d = 0
+bbRegion = 0
+omega = 0
+
+
+state = bench.load_data()
 
 # D2Q9 Lattice constants
 t = [4 / 9., 1 / 9., 1 / 9., 1 / 9., 1 / 9., 1 / 36., 1 / 36., 1 / 36., 1 / 36.]
@@ -75,17 +92,20 @@ def cylinder(height, width, obstacle=True):
 
 
 def solve(state, timesteps):
-    # load the ready only state
-    ly = int(state['ly'])
-    lx = int(state['lx'])
-    col = state['col']
-    cx_3d = state['cx_3d']
-    cy_3d = state['cy_3d']
-    bbRegion = state['bbRegion']
-    omega = state['omega']
+    global ly, lx, col, cx_3d, cy_3d, bbRegion, omega
+    if counter == 0:
+        print(counter)
+        # load the ready only state
+        ly = int(state['ly'])
+        lx = int(state['lx'])
+        col = state['col']
+        cx_3d = state['cx_3d']
+        cy_3d = state['cy_3d']
+        bbRegion = state['bbRegion']
+        omega = state['omega']
 
     def loop_body(fIn):
-
+        global counter
         # Macroscopic variables
         rho = np.sum(fIn, axis=0)
         ux = np.sum(cx_3d * fIn, axis=0) / rho
@@ -181,21 +201,37 @@ def solve(state, timesteps):
             else:
                 fIn[i] = fOut[i]
         bench.plot_surface(ux.T, "2d", 0, state['viz_max'], state['viz_min'])
+        counter += 1
+        if counter % 501 == 0:
+            dill.dump_session('dump_file.pkl')
+            print(counter)
 
-    bench.do_while(loop_body, timesteps, state['fIn'])
+    while True:
+        if counter < timesteps:
+            # start_time = timeit.default_timer()
+            loop_body(state['fIn'])
+            # stop_time = timeit.default_timer()
+            # with open(save, 'a') as f:
+            #     f.write(str(stop_time - start_time) + '\n')
+        else:
+            break
+
+    # bench.do_while(loop_body, timesteps, state['fIn'])
 
 
 def main():
-    H = bench.args.size[0]
-    W = bench.args.size[0]
-    I = 10000
-    state = bench.load_data()
+    global state
+    
     if state is None:
+        print("WHAT THE FLOOF")
         state = cylinder(H, W)
+
     bench.start()
     solve(state, I)
     bench.stop()
     bench.save_data(state)
+    with open('yes_check', 'wb') as f:
+        dill.dump(state, f)
     bench.pprint()
 
 
