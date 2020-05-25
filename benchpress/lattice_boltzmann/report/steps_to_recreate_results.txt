@@ -1,0 +1,2 @@
+vimdiff <(xxd no_check) <(xxd yes_check)
+

@@ -91,10 +91,9 @@ def cylinder(height, width, obstacle=True):
     return state
 
 
-def solve(state, timesteps):
-    global ly, lx, col, cx_3d, cy_3d, bbRegion, omega
+def solve(timesteps):
+    global ly, lx, col, cx_3d, cy_3d, bbRegion, omega, state
     if counter == 0:
-        print(counter)
         # load the ready only state
         ly = int(state['ly'])
         lx = int(state['lx'])
@@ -223,14 +222,13 @@ def main():
     global state
     
     if state is None:
-        print("WHAT THE FLOOF")
         state = cylinder(H, W)
 
     bench.start()
-    solve(state, I)
+    solve(I)
     bench.stop()
     bench.save_data(state)
-    with open('yes_check', 'wb') as f:
+    with open('final_state', 'wb') as f:
         dill.dump(state, f)
     bench.pprint()
 
