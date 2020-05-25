@@ -1,2 +1,0 @@
-Veros v0.2.1
-/home/leeannquynhdo/.local/lib/python3.7/site-packages/veros/setup/acc
