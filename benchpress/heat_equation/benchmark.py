@@ -42,7 +42,7 @@ def jacobi(grid, max_iterations, epsilon=0.005):
         counter += 1
         # print(counter)
         if counter % 100 == 0:
-            dill.dump_session('tmp/actualtmp' + str(counter) + 'dump_file.pkl')
+            dill.dump_session('tmp/dump_file.pkl')
 
 # DUMP
         return delta > epsilon
