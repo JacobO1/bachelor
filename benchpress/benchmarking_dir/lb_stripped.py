@@ -11,8 +11,8 @@ E-mail: Jonas.Latt@cui.unige.ch
 """
 import numpy as np
 from benchpress.benchmarks import util
-import dill
-import sys
+import timeit
+
 
 bench = util.Benchmark("The Lattice Boltzmann Methods D2Q9", "height*width*iterations")
 
@@ -79,12 +79,13 @@ def cylinder(height, width, obstacle=True):
     L = ly - 2.0
     y = col - 0.5
     ux[0, 1:ly - 1] = 4 * uMax / (L ** 2) * (y * L - y ** 2)
-    state['viz_min'] = ux.min()
     state['viz_max'] = ux.max()
+    state['viz_min'] = ux.min()
     return state
 
 
-def solve(timesteps, state):
+def solve(state, timesteps):
+    save = 'timings/lb/stripped/test' + str(bench.args.size[0]) + '.txt'
     # load the ready only state
     ly = int(state['ly'])
     lx = int(state['lx'])
@@ -192,17 +193,14 @@ def solve(timesteps, state):
                 fIn[i] = fOut[i]
         bench.plot_surface(ux.T, "2d", 0, state['viz_max'], state['viz_min'])
         counter += 1
-        if counter % 100 == 0:
-            dill.dump_session('dump_file.pkl')
-            print(counter)
 
     while True:
         if counter < timesteps:
-            # start_time = timeit.default_timer()
+            start_time = timeit.default_timer()
             loop_body(state['fIn'])
-            # stop_time = timeit.default_timer()
-            # with open(save, 'a') as f:
-            #     f.write(str(stop_time - start_time) + '\n')
+            stop_time = timeit.default_timer()
+            with open(save, 'a') as f:
+                f.write(str(stop_time - start_time) + '\n')
         else:
             break
 
@@ -210,18 +208,15 @@ def solve(timesteps, state):
 
 
 def main():
-    global state
-    np.set_printoptions(threshold=sys.maxsize)
+    global H, W, I, state
     
     if state is None:
         state = cylinder(H, W)
 
     bench.start()
-    solve(I, state)
+    solve(state, I)
     bench.stop()
     bench.save_data(state)
-    with open('final_state', 'wb') as f:
-        dill.dump(state, f)
     bench.pprint()
 
 
