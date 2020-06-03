@@ -11,17 +11,16 @@ E-mail: Jonas.Latt@cui.unige.ch
 """
 import numpy as np
 from benchpress.benchmarks import util
-import timeit
 import dill
+import timeit
 
 bench = util.Benchmark("The Lattice Boltzmann Methods D2Q9", "height*width*iterations")
 
 # Global variables needed to save and resume program
 counter = 0
-H = 200
-W = 200
+H = 100
+W = 100
 I = 1000
-
 
 state = bench.load_data()
 
@@ -86,7 +85,7 @@ def cylinder(height, width, obstacle=True):
 
 
 def solve(state, timesteps):
-    save = 'timings/lb/500/test' + str(bench.args.size[0]) + '.txt'
+    save = 'timings/lb/modules/test' + str(bench.args.size[0]) + '.txt'
     # load the ready only state
     ly = int(state['ly'])
     lx = int(state['lx'])
@@ -194,8 +193,6 @@ def solve(state, timesteps):
                 fIn[i] = fOut[i]
         bench.plot_surface(ux.T, "2d", 0, state['viz_max'], state['viz_min'])
         counter += 1
-        if counter % 166 == 0:
-            dill.dump_session('ramdisk/dump_file.pkl')
 
     while True:
         if counter < timesteps:

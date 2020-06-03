@@ -10,8 +10,8 @@ Adapted from: http://people.sc.fsu.edu/~jburkardt/m_src/shallow_water_2d/
 """
 import numpy as np
 from benchpress.benchmarks import util
-import timeit
 import dill
+import timeit
 
 bench = util.Benchmark("Shallow Water", "height*width*iterations")
 g = 9.80665  # gravitational acceleration
@@ -50,7 +50,7 @@ def model(height, width, dtype=np.float32):
 
 
 def simulate(state, timesteps):
-    save = 'timings/sw/500/test' + str(bench.args.size[0]) + '.txt'
+    save = 'timings/sw/modules/test' + str(bench.args.size[0]) + '.txt'
     # FLOP count: i*(12*s + 4*s**2 + 14*s**2 + 9*s**2 + 4*s**2 + 9*s**2 + 14*s**2 + 6*s**2 + 19*s**2 + 19*s**2)
     # where s is size and i is iterations
     def loop_body(H, U, V, dt=0.02, dx=1.0, dy=1.0):
@@ -113,8 +113,7 @@ def simulate(state, timesteps):
                                       (Vy[:, :-1] ** 2 / Hy[:, :-1] + g / 2 * Hy[:, :-1] ** 2))
         bench.plot_surface(H, "3d", 0, 0, 5.5)
         counter += 1
-        if counter % 500 == 0:
-            dill.dump_session('ramdisk/dump_file.pkl')
+
 
     while True:
         if counter < timesteps:
