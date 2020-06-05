@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 counter = 1
 
 #setup step:
-avg_arr = np.loadtxt('../../benchmark/timings/sw/++/test1.txt')
+avg_arr = np.loadtxt('../../benchmark/timings/sw/++/test10.txt')
 min_max_arr = np.empty([2,3000])
-min_max_arr[0] = np.loadtxt('../../benchmark/timings/sw/++/test1.txt')
-min_max_arr[1] = np.loadtxt('../../benchmark/timings/sw/++/test1.txt')
+min_max_arr[0] = np.loadtxt('../../benchmark/timings/sw/++/test10.txt')
+min_max_arr[1] = np.loadtxt('../../benchmark/timings/sw/++/test10.txt')
 
 # print(avg_arr.shape)
 # print(avg_arr)
@@ -17,7 +17,7 @@ min_max_arr[1] = np.loadtxt('../../benchmark/timings/sw/++/test1.txt')
 
 
 #Skipping 10 first executions for warmup purposes
-for i in range(2,11):
+for i in range(11,2001):
 	counter += 1
 	curr_exec = np.loadtxt('../../benchmark/timings/sw/++/test' + str(i) + '.txt')
 	for j in range(len(curr_exec)):
@@ -70,4 +70,4 @@ axes.set_ylim([-0.0001,0.0042])
 # plt.savefig('3kgraph_avg.png', dpi=250)
 # plt.savefig('test.png', dpi=150)
 # plt.show()
-plt. savefig('++2.png', dpi=350)
+plt. savefig('++_final_limited.png', dpi=350)
