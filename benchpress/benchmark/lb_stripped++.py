@@ -201,8 +201,8 @@ def solve(state, timesteps):
             start_time = timeit.default_timer()
             loop_body(state['fIn'])
             stop_time = timeit.default_timer()
-            with open(save, 'a') as f:
-                f.write(str(stop_time - start_time) + '\n')
+            # with open(save, 'a') as f:
+            #     f.write(str(stop_time - start_time) + '\n')
         else:
             break
 

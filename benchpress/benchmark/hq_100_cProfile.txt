@@ -1,0 +1,118 @@
+         4241521 function calls (4008521 primitive calls) in 4.383 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.051    0.051    4.383    4.383 hq_100.py:29(jacobi)
+    50000    2.755    0.000    4.322    0.000 hq_100.py:31(loop_body)
+      500    0.003    0.000    1.102    0.002 _dill.py:334(dump_session)
+      500    0.001    0.000    1.084    0.002 _dill.py:414(dump)
+      500    0.001    0.000    1.080    0.002 pickle.py:474(dump)
+190000/500    0.259    0.000    1.075    0.002 pickle.py:533(save)
+ 3500/500    0.014    0.000    1.073    0.002 _dill.py:1258(save_module)
+10500/500    0.024    0.000    1.058    0.002 pickle.py:619(save_reduce)
+ 5500/500    0.021    0.000    1.030    0.002 _dill.py:882(save_module_dict)
+ 4000/500    0.005    0.000    1.024    0.002 pickle.py:962(save_dict)
+ 4000/500    0.016    0.000    1.023    0.002 pickle.py:975(_batch_setitems)
+25500/8500    0.044    0.000    0.582    0.000 pickle.py:871(save_tuple)
+3500/2500    0.012    0.000    0.485    0.000 _dill.py:1381(save_function)
+    50000    0.028    0.000    0.443    0.000 <__array_function__ internals>:2(sum)
+    50000    0.023    0.000    0.408    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+    50000    0.055    0.000    0.384    0.000 fromnumeric.py:2092(sum)
+2000/1500    0.006    0.000    0.343    0.000 _dill.py:850(save_code)
+    50000    0.052    0.000    0.321    0.000 fromnumeric.py:73(_wrapreduction)
+    50000    0.247    0.000    0.247    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+    55000    0.055    0.000    0.176    0.000 pickle.py:848(save_str)
+   101500    0.094    0.000    0.154    0.000 pickle.py:489(memoize)
+     5500    0.017    0.000    0.098    0.000 pickle.py:1053(save_global)
+     4000    0.010    0.000    0.095    0.000 _dill.py:1304(save_type)
+   310000    0.063    0.000    0.089    0.000 pickle.py:241(write)
+   191000    0.053    0.000    0.069    0.000 pickle.py:217(commit_frame)
+     3500    0.012    0.000    0.053    0.000 _dill.py:1283(<listcomp>)
+      500    0.002    0.000    0.050    0.000 _dill.py:1068(save_builtin_method)
+    14000    0.022    0.000    0.033    0.000 posixpath.py:334(normpath)
+   427500    0.031    0.000    0.031    0.000 {built-in method builtins.id}
+    33000    0.016    0.000    0.029    0.000 pickle.py:749(save_long)
+     5000    0.005    0.000    0.029    0.000 pickle.py:787(save_bytes)
+   309500    0.025    0.000    0.025    0.000 {method 'write' of '_io.BytesIO' objects}
+   158000    0.022    0.000    0.024    0.000 _dill.py:380(get)
+   219500    0.023    0.000    0.023    0.000 {built-in method builtins.getattr}
+    50000    0.022    0.000    0.022    0.000 util.py:271(plot_surface)
+   198000    0.020    0.000    0.020    0.000 {method 'get' of 'dict' objects}
+    38000    0.011    0.000    0.017    0.000 __init__.py:1424(info)
+    50000    0.017    0.000    0.017    0.000 fromnumeric.py:74(<dictcomp>)
+   193000    0.015    0.000    0.015    0.000 {built-in method builtins.len}
+   129000    0.015    0.000    0.015    0.000 {built-in method _struct.pack}
+   191500    0.015    0.000    0.015    0.000 {method 'tell' of '_io.BytesIO' objects}
+    17500    0.009    0.000    0.014    0.000 _dill.py:1489(is_dill)
+   190000    0.014    0.000    0.014    0.000 pickle.py:603(persistent_id)
+      500    0.001    0.000    0.013    0.000 pickle.py:247(write_large_bytes)
+    32000    0.009    0.000    0.013    0.000 pickle.py:524(get)
+    79500    0.012    0.000    0.012    0.000 {built-in method builtins.isinstance}
+     3500    0.012    0.000    0.012    0.000 {method 'write' of '_io.BufferedWriter' objects}
+   101500    0.011    0.000    0.011    0.000 pickle.py:512(put)
+     3500    0.003    0.000    0.010    0.000 _dill.py:833(_locate_function)
+   100000    0.010    0.000    0.010    0.000 {built-in method time.perf_counter}
+     8000    0.010    0.000    0.010    0.000 {built-in method builtins.__import__}
+    46503    0.009    0.000    0.009    0.000 {built-in method builtins.hasattr}
+     3500    0.003    0.000    0.009    0.000 <frozen importlib._bootstrap>:269(_module_repr)
+      500    0.009    0.000    0.009    0.000 {built-in method io.open}
+     2500    0.003    0.000    0.008    0.000 _dill.py:819(_import_module)
+    55000    0.008    0.000    0.008    0.000 {method 'encode' of 'str' objects}
+    50000    0.007    0.000    0.007    0.000 fromnumeric.py:2087(_sum_dispatcher)
+    38000    0.007    0.000    0.007    0.000 __init__.py:1677(isEnabledFor)
+    11500    0.003    0.000    0.006    0.000 pickle.py:738(save_none)
+     5500    0.004    0.000    0.006    0.000 pickle.py:322(_getattribute)
+    42000    0.006    0.000    0.006    0.000 {method 'startswith' of 'str' objects}
+    54000    0.005    0.000    0.005    0.000 {method 'items' of 'dict' objects}
+     3000    0.002    0.000    0.005    0.000 <frozen importlib._bootstrap>:566(_module_repr_from_spec)
+    27000    0.005    0.000    0.005    0.000 {method 'split' of 'str' objects}
+      500    0.000    0.000    0.004    0.000 pickle.py:922(save_list)
+      500    0.004    0.000    0.004    0.000 {method '__reduce_ex__' of 'numpy.ndarray' objects}
+    18500    0.003    0.000    0.003    0.000 {method 'mro' of 'type' objects}
+     2000    0.003    0.000    0.003    0.000 {method '__reduce_ex__' of 'object' objects}
+     3500    0.003    0.000    0.003    0.000 {method 'format' of 'str' objects}
+      500    0.001    0.000    0.003    0.000 _dill.py:400(__init__)
+     2500    0.001    0.000    0.003    0.000 pickle.py:780(save_float)
+      500    0.003    0.000    0.003    0.000 {method 'close' of '_io.BufferedWriter' objects}
+      500    0.001    0.000    0.003    0.000 pickle.py:935(_batch_appends)
+      500    0.001    0.000    0.002    0.000 pickle.py:212(end_framing)
+     5500    0.001    0.000    0.002    0.000 pickle.py:335(whichmodule)
+      500    0.002    0.000    0.002    0.000 _dill.py:145(numpyufunc)
+     3500    0.001    0.000    0.002    0.000 pickle.py:742(save_bool)
+     2500    0.002    0.000    0.002    0.000 _dill.py:386(__missing__)
+    16000    0.002    0.000    0.002    0.000 {method 'join' of 'str' objects}
+      500    0.001    0.000    0.001    0.000 pickle.py:407(__init__)
+    14000    0.001    0.000    0.001    0.000 {built-in method posix.fspath}
+    14000    0.001    0.000    0.001    0.000 {method 'append' of 'list' objects}
+     6000    0.001    0.000    0.001    0.000 {method 'rpartition' of 'str' objects}
+    10500    0.001    0.000    0.001    0.000 {built-in method builtins.callable}
+      500    0.001    0.000    0.001    0.000 _dill.py:127(ndarraysubclassinstance)
+     8500    0.001    0.000    0.001    0.000 {built-in method builtins.issubclass}
+     4500    0.001    0.000    0.001    0.000 {built-in method builtins.iter}
+     3500    0.001    0.000    0.001    0.000 {built-in method builtins.any}
+      500    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap>:389(parent)
+      500    0.000    0.000    0.000    0.000 _dill.py:1292(<listcomp>)
+     1000    0.000    0.000    0.000    0.000 {method 'getbuffer' of '_io.BytesIO' objects}
+     3000    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:397(has_location)
+      500    0.000    0.000    0.000    0.000 pickle.py:209(start_framing)
+      500    0.000    0.000    0.000    0.000 {method 'copy' of 'dict' objects}
+     2500    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+     1000    0.000    0.000    0.000    0.000 {method 'clear' of 'dict' objects}
+      500    0.000    0.000    0.000    0.000 pickle.py:205(__init__)
+        1    0.000    0.000    0.000    0.000 hq_100.py:20(init_grid)
+        1    0.000    0.000    0.000    0.000 {built-in method numpy.zeros}
+        3    0.000    0.000    0.000    0.000 copyreg.py:99(_slotnames)
+        1    0.000    0.000    0.000    0.000 util.py:141(start)
+        1    0.000    0.000    0.000    0.000 __init__.py:214(_acquireLock)
+        1    0.000    0.000    0.000    0.000 __init__.py:223(_releaseLock)
+        3    0.000    0.000    0.000    0.000 {method 'get' of 'mappingproxy' objects}
+        1    0.000    0.000    0.000    0.000 {method 'acquire' of '_thread.RLock' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method time.time}
+        1    0.000    0.000    0.000    0.000 __init__.py:1663(getEffectiveLevel)
+        1    0.000    0.000    0.000    0.000 util.py:134(flush)
+        1    0.000    0.000    0.000    0.000 {method 'release' of '_thread.RLock' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+hq_100.py - bohrium: False, size: 0, elapsed-time: 4.385108

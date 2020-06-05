@@ -1,0 +1,55 @@
+# started on Fri Jun  5 17:22:28 2020
+
+
+ Performance counter stats for 'python3 sw_100_cp.py 0':
+
+     2.832.191.786      branches:u                #  893,016 M/sec                    (6,14%)
+        12.217.648      branch-misses:u           #    0,43% of all branches          (9,13%)
+        64.474.347      bus-cycles:u              #   20,329 M/sec                    (12,04%)
+         9.445.605      cache-misses:u            #    0,368 % of all cache refs      (11,80%)
+     2.565.991.478      cache-references:u        #  809,081 M/sec                    (11,46%)
+    11.121.138.198      cycles:u                  #    3,507 GHz                      (14,20%)
+    17.883.421.183      instructions:u            #    1,61  insn per cycle           (16,94%)
+     9.874.620.406      ref-cycles:u              # 3113,560 M/sec                    (19,68%)
+                 0      alignment-faults:u        #    0,000 K/sec                  
+                 0      bpf-output:u              #    0,000 K/sec                  
+                 0      cs:u                      #    0,000 K/sec                  
+          3.171,41 msec cpu-clock:u               #    1,176 CPUs utilized          
+                 0      migrations:u              #    0,000 K/sec                  
+                 0      dummy:u                   #    0,000 K/sec                  
+                 0      emulation-faults:u        #    0,000 K/sec                  
+                 0      major-faults:u            #    0,000 K/sec                  
+             5.680      minor-faults:u            #    0,002 M/sec                  
+             5.680      faults:u                  #    0,002 M/sec                  
+          3.171,57 msec task-clock:u              #    1,176 CPUs utilized          
+     2.696.342.967 ns   duration_time:u           #  850,182 M/sec                  
+     1.717.728.771      L1-dcache-load-misses:u   #   36,61% of all L1-dcache hits    (19,76%)
+     4.692.604.291      L1-dcache-loads:u         # 1479,622 M/sec                    (20,24%)
+     2.900.061.699      L1-dcache-stores:u        #  914,416 M/sec                    (20,82%)
+       235.993.946      L1-icache-load-misses:u                                       (21,43%)
+           607.504      LLC-load-misses:u         #    0,38% of all LL-cache hits     (13,49%)
+       161.876.514      LLC-loads:u               #   51,041 M/sec                    (13,48%)
+         1.072.055      LLC-store-misses:u        #    0,338 M/sec                    (6,79%)
+       240.125.880      LLC-stores:u              #   75,714 M/sec                    (6,80%)
+        12.510.506      branch-load-misses:u      #    3,945 M/sec                    (10,17%)
+     2.564.819.050      branch-loads:u            #  808,711 M/sec                    (13,55%)
+           136.157      dTLB-load-misses:u        #    0,00% of all dTLB cache hits   (13,70%)
+     3.977.436.336      dTLB-loads:u              # 1254,123 M/sec                    (13,81%)
+            39.485      dTLB-store-misses:u       #    0,012 M/sec                    (13,81%)
+     2.538.498.974      dTLB-stores:u             #  800,412 M/sec                    (13,82%)
+            75.505      iTLB-load-misses:u        #    0,83% of all iTLB cache hits   (13,80%)
+         9.135.112      iTLB-loads:u              #    2,880 M/sec                    (13,61%)
+     1.459.634.517      l1d.replacement:u         #  460,236 M/sec                    (13,63%)
+           323.067      mem_inst_retired.stlb_miss_loads:u #    0,102 M/sec                    (13,68%)
+       454.724.666      mem_load_retired.l1_miss:u #  143,379 M/sec                    (13,53%)
+       109.437.091      mem_load_retired.l2_miss:u #   34,507 M/sec                    (13,56%)
+           372.057      mem_load_retired.l3_miss:u #    0,117 M/sec                    (13,43%)
+        59.902.651      frontend_retired.l1i_miss:u #   18,888 M/sec                    (13,18%)
+        44.939.141      frontend_retired.l2_miss:u #   14,170 M/sec                    (3,05%)
+
+       2,696342967 seconds time elapsed
+
+       2,822950000 seconds user
+       0,329239000 seconds sys
+
+

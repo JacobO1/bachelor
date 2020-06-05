@@ -3,6 +3,8 @@ import numpy as np
 from benchpress.benchmarks import util
 import dill
 import timeit
+import cProfile
+
 
 bench = util.Benchmark("Solving the heat equation using the jacobi method", "height*width*iterations")
 
@@ -10,7 +12,7 @@ bench = util.Benchmark("Solving the heat equation using the jacobi method", "hei
 counter = 0
 H = 100
 W = 100
-I = 30000
+I = 50000
 
 grid = bench.load_data()
 
@@ -38,7 +40,7 @@ def jacobi(grid, max_iterations, epsilon=0.005):
         center[:] = work
         bench.plot_surface(grid, "2d", 0, 200, -200)
         counter += 1
-        if counter % 1000 == 0:
+        if counter % 500 == 0:
             dill.dump_session('ramdisk/dump_file.pkl')
 
         return delta > epsilon
@@ -57,12 +59,16 @@ def jacobi(grid, max_iterations, epsilon=0.005):
 
 def main():
     global H, W, I, grid
+    pr = cProfile.Profile()
+    pr.enable()
 
     if grid is None:
         grid = init_grid(H, W, dtype=bench.dtype)
 
     bench.start()
     grid = jacobi(grid, max_iterations=I)
+    pr.disable()
+    pr.print_stats(sort='cumtime')
     bench.stop()
     bench.save_data({'grid': grid})
     bench.pprint()
