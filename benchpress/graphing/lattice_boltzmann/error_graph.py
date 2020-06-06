@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 counter = 1
 
 #setup step:
-avg_arr = np.loadtxt('../../benchmark/timings/lb/stripped/test10.txt')
+avg_arr = np.loadtxt('../../benchmark/timings/lb/++/test10.txt')
 min_max_arr = np.empty([2,1000])
-min_max_arr[0] = np.loadtxt('../../benchmark/timings/lb/stripped/test10.txt')
-min_max_arr[1] = np.loadtxt('../../benchmark/timings/lb/stripped/test10.txt')
+min_max_arr[0] = np.loadtxt('../../benchmark/timings/lb/++/test10.txt')
+min_max_arr[1] = np.loadtxt('../../benchmark/timings/lb/++/test10.txt')
 
 # print(avg_arr.shape)
 # print(avg_arr)
@@ -19,7 +19,7 @@ min_max_arr[1] = np.loadtxt('../../benchmark/timings/lb/stripped/test10.txt')
 #Skipping 10 first executions for warmup purposes
 for i in range(11,2001):
 	counter += 1
-	curr_exec = np.loadtxt('../../benchmark/timings/lb/stripped/test' + str(i) + '.txt')
+	curr_exec = np.loadtxt('../../benchmark/timings/lb/++/test' + str(i) + '.txt')
 	for j in range(len(curr_exec)):
 	
 	
@@ -32,6 +32,7 @@ for i in range(11,2001):
 			#MAX
 			min_max_arr[1][j] = curr_exec[j]
 
+plt.rcParams.update({'font.size': 22})
 
 final_avg_arr = [(x/counter) for x in avg_arr]
 
@@ -49,25 +50,30 @@ plt.figure(figsize=(20,10))
 # ax.set_aspect(0.7)
 
 plt.errorbar(x, final_avg_arr, elinewidth=0.5, fmt='midnightblue', yerr=min_max_arr, label="Blue= Iteration average\nRed = Iteration variance", ecolor='tomato')
-
 plt.xlabel('Iterations')
 plt.ylabel('Time in seconds')
 
 # plt.savefig('3kgraph.png', dpi=250)
 
 actual_avg_list = [actual_avg] * len(x)
-print(actual_avg)
+# print(actual_avg)
 
 # plt.plot(x, final_avg_arr, 'go', label="Iteration average")
 plt.plot(x,actual_avg_list, '-', color='limegreen', label="Overall average time")
 plt.xlabel('Iterations')
 plt.ylabel('Time in seconds')
 
-plt.legend(loc="upper right")
 
 
+axes = plt.gca()
+# axes.set_ylim([-0.00034611973829414905, 0.008370776085347474])
+# try:
+# 	print(axes.get_ylim())
+# except:
+# 	print(axes.ylim)
 
 # plt.savefig('3kgraph_avg.png', dpi=250)
 # plt.savefig('test.png', dpi=150)
 # plt.show()
-# plt. savefig('stripped.png', dpi=350)
+plt.legend()
+plt.savefig('++.png', dpi=350)

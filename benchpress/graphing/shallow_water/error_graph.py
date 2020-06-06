@@ -32,6 +32,7 @@ for i in range(11,2001):
 			#MAX
 			min_max_arr[1][j] = curr_exec[j]
 
+plt.rcParams.update({'font.size': 22})
 
 final_avg_arr = [(x/counter) for x in avg_arr]
 
@@ -44,12 +45,7 @@ x = np.linspace(0,len(final_avg_arr),len(final_avg_arr))
 plt.figure(figsize=(20,10))
 
 
-#Aspect ratio between axis
-# ax = plt.gca()
-# ax.set_aspect(0.7)
-
 plt.errorbar(x, final_avg_arr, elinewidth=0.5, fmt='midnightblue', yerr=min_max_arr, label="Blue= Iteration average\nRed = Iteration variance", ecolor='tomato')
-
 plt.xlabel('Iterations')
 plt.ylabel('Time in seconds')
 
@@ -63,11 +59,17 @@ plt.plot(x,actual_avg_list, '-', color='limegreen', label="Overall average time"
 plt.xlabel('Iterations')
 plt.ylabel('Time in seconds')
 
+
 axes = plt.gca()
-axes.set_ylim([-0.0001,0.0042])
+axes.set_ylim([-0.00017448231963488475, 0.0042751414483769385])
+try:
+	print(axes.get_ylim())
+except:
+	print(axes.ylim)
 
 
 # plt.savefig('3kgraph_avg.png', dpi=250)
 # plt.savefig('test.png', dpi=150)
 # plt.show()
-plt. savefig('++_final_limited.png', dpi=350)
+plt.legend()
+plt.savefig('++.png', dpi=350)
